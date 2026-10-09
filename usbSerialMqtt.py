@@ -1,11 +1,9 @@
 #!/usr/bin/env python
 
-import os
-import ssl
-import json
 import asyncio
-import aiomqtt
-import serial
+import json
+import os
+
 import serial_asyncio
 
 """
@@ -27,9 +25,9 @@ featherrfm69_var = [
 ]
 
 
-class EnvInfo():
+class EnvInfo:
     """ load Environment into dict """
-    def __init__(self, args=[], kwargs={}):
+    def __init__(self, args: list, kwargs: dict):
         for k in args:
             for k in args:
                 self.__setattr__(k, os.environ.get(k, ""))
@@ -51,7 +49,7 @@ class ReadLines(asyncio.Protocol):
         """
         self.transport = transport
         self.transport.serial.rts = False  # You can manipulate Serial object via transport
-        self.buf = bytes()
+        self.buf = b""
 
         print('Reader connection created')
 

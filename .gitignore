@@ -1,2 +1,7 @@
 mqtt-notify/
 __pycache__/
+*.pyc
+*.pkl
+dist
+build
+.ruff_cache

@@ -25,13 +25,12 @@
 
 """
 
-import os
-import sys
-import argparse
-import ssl
-import json
 import asyncio
+import json
+import os
+
 import aiomqtt
+
 #import aiomqtt_wrap
 from aiomqtt_wrap import aiomqtt_wrap_main
 
@@ -67,9 +66,9 @@ poudriere_var = [
 ]
 
 
-class EnvInfo():
+class EnvInfo:
     """ read env """
-    def __init__(self, args=[], kwargs={}):
+    def __init__(self, args: list, kwargs: dict):
         for k in args:
             for k in args:
                 self.__setattr__(k, os.environ.get(k, ""))
