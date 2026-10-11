@@ -250,10 +250,10 @@ if __name__ == "__main__":
         cfg_options: dict=None
 
     cmd_options = _parse_args(sys.argv, cfg_options)
-    try:
-        cfg_options["qos"] = qosmap[cfg_options["qos"]]
-    except:
-        print(woops)
+  
+    cfg_options["qos"] = qosmap[cfg_options["qos"]]
+    
+   
 
     if cmd_options["dump_options"]:
         print(cmd_options)
